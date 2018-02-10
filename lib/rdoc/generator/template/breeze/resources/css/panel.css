@@ -115,7 +115,7 @@
         .panel .result ul li.current h1,
         .panel .result ul li.current p
         {
-            color: #2965C0;
+            color: #D9D9D9;
         }
 
         .panel .result ul li.current h1 i,
@@ -310,7 +310,7 @@
 
         .panel .tree ul li.current
         {
-            background: #3875D7;
+            background: #2965C0;
         }
 
         .panel .tree ul li.current .icon
