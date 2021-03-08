@@ -1,6 +1,6 @@
 # SDoc
 
-[![Build Status](https://travis-ci.org/zzak/sdoc.png?branch=master)](https://travis-ci.org/zzak/sdoc)
+[![Build Status](https://travis-ci.org/zzak/sdoc.svg?branch=master)](https://travis-ci.org/zzak/sdoc)
 
 **Powering http://api.rubyonrails.org/**
 
@@ -62,9 +62,9 @@ require 'sdoc' # and use your RDoc task the same way you used it before
 require 'rdoc/task' # ensure this file is also required in order to use `RDoc::Task`
 
 RDoc::Task.new do |rdoc|
-  rdoc.rdoc_dir = 'doc/rdoc' # name of output directory
-  rdoc.generator = 'sdoc' # explictly set the sdoc generator
-  rdoc.template = 'rails' # template used on api.rubyonrails.org
+  rdoc.rdoc_dir = 'doc/rdoc'      # name of output directory
+  rdoc.options << '--format=sdoc' # explictly set the sdoc generator
+  rdoc.template = 'rails'         # template used on api.rubyonrails.org
 end
 ```
 
@@ -90,6 +90,24 @@ Please feel free to still report issues here for both projects, especially if yo
 
 As maintainer of both projects, I'll see if I can identify the root of the cause :bow: :bow: :bow:
 
+## Contributing
+
+If you'd like to contribute you can generate the Rails documentation by running:
+
+```bash
+rake test:rails
+```
+
+This task will generate documentation for the Rails master branch.
+Since the task doesn't do any file filtering it contains a lot of extra pages.
+
+To view the just generated documentation start up a rack application by running:
+
+```bash
+rackup config.ru
+```
+
+Then open http://localhost:9292 in the browser to view the documentation.
 
 ### Who?
 
